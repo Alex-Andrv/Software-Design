@@ -56,7 +56,7 @@ class LRUCache {
             }
 
             assert this.after == entry;
-            assert (entry.before == this && entry.after ==  rightNeighbor);
+            assert (entry.before == this) && (entry.after ==  rightNeighbor);
         }
 
         private void drop() {
