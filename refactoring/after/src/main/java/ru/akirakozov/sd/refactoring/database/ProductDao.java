@@ -1,6 +1,6 @@
 package ru.akirakozov.sd.refactoring.database;
 
-import ru.akirakozov.sd.refactoring.Model.Product;
+import ru.akirakozov.sd.refactoring.model.Product;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -7,14 +7,14 @@ import ru.akirakozov.sd.refactoring.servlet.AddProductServlet;
 import ru.akirakozov.sd.refactoring.servlet.GetProductsServlet;
 import ru.akirakozov.sd.refactoring.servlet.QueryServlet;
 
-import static ru.akirakozov.sd.refactoring.database.InitDb.initDb;
+import static ru.akirakozov.sd.refactoring.database.InitProdDb.initProdDb;
 
 /**
  * @author akirakozov
  */
 public class Start {
     public static void main(String[] args) throws Exception {
-        initDb();
+        initProdDb();
         start();
     }
 

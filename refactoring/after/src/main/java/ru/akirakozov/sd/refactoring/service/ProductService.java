@@ -1,6 +1,6 @@
 package ru.akirakozov.sd.refactoring.service;
 
-import ru.akirakozov.sd.refactoring.Model.Product;
+import ru.akirakozov.sd.refactoring.model.Product;
 
 import java.util.List;
 import java.util.Optional;

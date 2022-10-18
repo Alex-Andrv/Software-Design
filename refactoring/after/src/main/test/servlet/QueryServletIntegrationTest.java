@@ -12,6 +12,7 @@ import java.io.StringWriter;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.verify;
 
+// TODO refactor test
 public class QueryServletIntegrationTest {
     @Test
     public void maxQueryServletIntegrationTest() throws IOException {

@@ -1,6 +1,6 @@
 package ru.akirakozov.sd.refactoring.servlet;
 
-import ru.akirakozov.sd.refactoring.Model.Product;
+import ru.akirakozov.sd.refactoring.model.Product;
 import ru.akirakozov.sd.refactoring.view.HtmlConvertorGetMax;
 import ru.akirakozov.sd.refactoring.view.HtmlConvertorGetMin;
 import ru.akirakozov.sd.refactoring.view.HtmlConvertorGetSum;
