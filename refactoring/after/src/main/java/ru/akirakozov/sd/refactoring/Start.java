@@ -19,7 +19,6 @@ public class Start {
     }
 
     public static void start() throws Exception {
-
         Server server = new Server(8081);
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
