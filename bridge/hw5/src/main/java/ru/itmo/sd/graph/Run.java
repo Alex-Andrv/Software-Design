@@ -6,13 +6,13 @@ import java.util.MissingFormatArgumentException;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
-import ru.itmo.sd.graph.gfx.GraphRender;
+import ru.itmo.sd.graph.GUI.GraphRender;
 import ru.itmo.sd.graph.graph.Graph;
-import ru.itmo.sd.graph.io.GraphReader;
-import ru.itmo.sd.graph.io.Parameter;
-import ru.itmo.sd.graph.io.ParametersData;
+import ru.itmo.sd.graph.reader.GraphReader;
+import ru.itmo.sd.graph.parameter.Parameter;
+import ru.itmo.sd.graph.parameter.ParametersData;
 
-public class RunGraphLayout {
+public class Run {
 
     private static Graph graph;
 

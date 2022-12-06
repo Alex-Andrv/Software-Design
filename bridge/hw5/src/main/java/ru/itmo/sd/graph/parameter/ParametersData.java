@@ -1,4 +1,4 @@
-package ru.itmo.sd.graph.io;
+package ru.itmo.sd.graph.parameter;
 
 import java.util.Arrays;
 import java.util.HashMap;

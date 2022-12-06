@@ -1,4 +1,4 @@
-package ru.itmo.sd.graph.gfx;
+package ru.itmo.sd.graph.GUI;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -7,7 +7,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
-import ru.itmo.sd.graph.RunGraphLayout;
+import ru.itmo.sd.graph.Run;
 
 import java.awt.*;
 
@@ -42,7 +42,7 @@ public class JavaFXGraphRender extends Application implements GraphRender {
         stage.sizeToScene();
         stage.show();
         context = CANVAS.getGraphicsContext2D();
-        RunGraphLayout.render(this);
+        Run.render(this);
     }
 
     @Override

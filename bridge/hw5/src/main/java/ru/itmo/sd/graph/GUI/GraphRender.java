@@ -1,4 +1,4 @@
-package ru.itmo.sd.graph.gfx;
+package ru.itmo.sd.graph.GUI;
 
 import java.awt.Color;
 

@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
-import ru.itmo.sd.graph.io.EdgesGraphReader;
-import ru.itmo.sd.graph.io.GraphReader;
-import ru.itmo.sd.graph.io.MatrixGraphReader;
+import ru.itmo.sd.graph.reader.EdgesGraphReader;
+import ru.itmo.sd.graph.reader.GraphReader;
+import ru.itmo.sd.graph.reader.MatrixGraphReader;
 
 public enum GraphFormat {
 

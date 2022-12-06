@@ -1,6 +1,6 @@
-package ru.itmo.sd.graph.gfx;
+package ru.itmo.sd.graph.GUI;
 
-import ru.itmo.sd.graph.RunGraphLayout;
+import ru.itmo.sd.graph.Run;
 
 import static java.awt.BasicStroke.*;
 
@@ -52,7 +52,7 @@ public class AWTGraphRender implements GraphRender {
         bufferStrategy = canvas.getBufferStrategy();
         graphics = bufferStrategy.getDrawGraphics();
         bufferStrategy.show();
-        RunGraphLayout.render(this);
+        Run.render(this);
     }
 
     @Override

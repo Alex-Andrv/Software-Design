@@ -32,7 +32,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>ru.itmo.sd.graph.RunGraphLayout</mainClass>
+                                    <mainClass>ru.itmo.sd.graph.Run</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

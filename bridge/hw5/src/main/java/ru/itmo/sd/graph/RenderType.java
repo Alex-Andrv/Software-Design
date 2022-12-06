@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
-import ru.itmo.sd.graph.gfx.AWTGraphRender;
-import ru.itmo.sd.graph.gfx.GraphRender;
-import ru.itmo.sd.graph.gfx.JavaFXGraphRender;
+import ru.itmo.sd.graph.GUI.AWTGraphRender;
+import ru.itmo.sd.graph.GUI.GraphRender;
+import ru.itmo.sd.graph.GUI.JavaFXGraphRender;
 
 public enum RenderType {
 

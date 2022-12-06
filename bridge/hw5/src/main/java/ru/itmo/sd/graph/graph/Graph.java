@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
-import ru.itmo.sd.graph.gfx.GraphRender;
+import ru.itmo.sd.graph.GUI.GraphRender;
 import ru.itmo.sd.graph.utils.Pair;
 
 public class Graph {
