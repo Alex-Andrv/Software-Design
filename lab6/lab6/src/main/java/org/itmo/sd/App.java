@@ -9,10 +9,6 @@ import org.itmo.sd.visitor.PrintVisitor;
 import java.io.*;
 import java.util.List;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main(String[] args) {

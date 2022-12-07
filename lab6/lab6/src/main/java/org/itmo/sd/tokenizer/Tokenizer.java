@@ -1,5 +1,6 @@
 package org.itmo.sd.tokenizer;
 
+import org.itmo.sd.tokenizer.state.EofState;
 import org.itmo.sd.tokenizer.state.RouterState;
 import org.itmo.sd.tokenizer.state.State;
 import org.itmo.sd.tokenizer.token.Token;
@@ -42,7 +43,11 @@ public class Tokenizer {
             currChar = reader.read();
         }
         parse(currChar);
-        return tokens;
+        if (tokenState instanceof EofState) {
+            return tokens;
+        } else {
+            throw new RuntimeException("Wrong input string format");
+        }
     }
 
     // friendly method
