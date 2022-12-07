@@ -23,10 +23,8 @@ public class ParserVisitorTest {
         InputStream inputStream = new ByteArrayInputStream(in.getBytes());
         List<Token> tokens = new Tokenizer(inputStream).getTokenList();
         ParserVisitor parserVisitor = new ParserVisitor();
-        for (var token : tokens) {
-            token.accept(parserVisitor);
-        }
-        List<Token> actual = parserVisitor.getResult();
+
+        List<Token> actual = parserVisitor.visitCompoundToken(tokens);
 
         List<Token> expected =
                 List.of(
@@ -49,10 +47,8 @@ public class ParserVisitorTest {
         InputStream inputStream = new ByteArrayInputStream(in.getBytes());
         List<Token> tokens = new Tokenizer(inputStream).getTokenList();
         ParserVisitor parserVisitor = new ParserVisitor();
-        for (var token : tokens) {
-            token.accept(parserVisitor);
-        }
-        List<Token> actual = parserVisitor.getResult();
+
+        List<Token> actual = parserVisitor.visitCompoundToken(tokens);
 
         List<Token> expected =
                 List.of(

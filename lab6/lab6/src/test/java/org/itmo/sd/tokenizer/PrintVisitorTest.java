@@ -26,11 +26,7 @@ public class PrintVisitorTest {
 
         PrintVisitor printVisitor = new PrintVisitor();
 
-        for (var token : exp) {
-            token.accept(printVisitor);
-        }
-
-        assertEquals("1 2 + 3 /", printVisitor.getResult());
+        assertEquals("1 2 + 3 /", printVisitor.visitCompoundToken(exp));
     }
 
     @Test
@@ -60,10 +56,6 @@ public class PrintVisitorTest {
 
         PrintVisitor printVisitor = new PrintVisitor();
 
-        for (var token : exp) {
-            token.accept(printVisitor);
-        }
-
-        assertEquals("1 2 10 * + 10 - 17 7 * 8 / + 3 / 1 2 + *", printVisitor.getResult());
+        assertEquals("1 2 10 * + 10 - 17 7 * 8 / + 3 / 1 2 + *", printVisitor.visitCompoundToken(exp));
     }
 }

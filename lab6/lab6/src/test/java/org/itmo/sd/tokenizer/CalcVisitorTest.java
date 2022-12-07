@@ -26,11 +26,7 @@ public class CalcVisitorTest {
 
         CalcVisitor calcVisitor = new CalcVisitor();
 
-        for (var token : exp) {
-            token.accept(calcVisitor);
-        }
-
-        assertEquals(new Integer(1), calcVisitor.getResult());
+        assertEquals(1, (int) calcVisitor.visitCompoundToken(exp));
     }
 
     @Test
@@ -57,13 +53,8 @@ public class CalcVisitorTest {
                         new SumOp(),
                         new MulOp());
 
-
         CalcVisitor calcVisitor = new CalcVisitor();
 
-        for (var token : exp) {
-            token.accept(calcVisitor);
-        }
-
-        assertEquals(new Integer(24), calcVisitor.getResult());
+        assertEquals(24, (int) calcVisitor.visitCompoundToken(exp));
     }
 }
