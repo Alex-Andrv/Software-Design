@@ -8,8 +8,6 @@ import java.util.Stack;
 
 public class CalcVisitor extends Visitor<Integer> {
 
-    Double res;
-
     private final Stack<Digit> stackDigit;
 
     public CalcVisitor() {
