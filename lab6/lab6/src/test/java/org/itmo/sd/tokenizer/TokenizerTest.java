@@ -1,11 +1,6 @@
 package org.itmo.sd.tokenizer;
 
 import org.itmo.sd.tokenizer.token.Token;
-import org.itmo.sd.tokenizer.token.binary.DivOp;
-import org.itmo.sd.tokenizer.token.binary.MulOp;
-import org.itmo.sd.tokenizer.token.binary.SumOp;
-import org.itmo.sd.tokenizer.token.bracket.ClBracket;
-import org.itmo.sd.tokenizer.token.bracket.OpBracket;
 import org.itmo.sd.tokenizer.token.primitives.Digit;
 import org.junit.Test;
 
@@ -14,6 +9,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import static org.itmo.sd.tokenizer.token.binary.BinOp.*;
+import static org.itmo.sd.tokenizer.token.bracket.BracketEnum.CLOSE_BRACKET;
+import static org.itmo.sd.tokenizer.token.bracket.BracketEnum.OPEN_BRACKET;
 import static org.junit.Assert.assertEquals;
 
 public class TokenizerTest {
@@ -25,12 +23,12 @@ public class TokenizerTest {
 
         List<Token> expected =
                 List.of(
-                        new OpBracket(),
+                        OPEN_BRACKET,
                         new Digit(1),
-                        new SumOp(),
+                        SUM_OP,
                         new Digit(2),
-                        new ClBracket(),
-                        new DivOp(),
+                        CLOSE_BRACKET,
+                        DIV_OP,
                         new Digit(3));
 
         assertEquals(actual.size(), expected.size());
@@ -48,19 +46,19 @@ public class TokenizerTest {
 
         List<Token> expected =
                 List.of(
-                        new OpBracket(),
+                        OPEN_BRACKET,
                         new Digit(10),
-                        new OpBracket(),
+                        OPEN_BRACKET,
                         new Digit(1),
-                        new SumOp(),
+                        SUM_OP,
                         new Digit(21),
-                        new MulOp(),
+                        MUL_OP,
                         new Digit(22),
-                        new ClBracket(),
-                        new ClBracket(),
-                        new DivOp(),
+                        CLOSE_BRACKET,
+                        CLOSE_BRACKET,
+                        DIV_OP,
                         new Digit(33),
-                        new SumOp(),
+                        SUM_OP,
                         new Digit(32));
 
         assertEquals(actual.size(), expected.size());

@@ -3,13 +3,7 @@ package org.itmo.sd.tokenizer.token.primitives;
 import org.itmo.sd.tokenizer.token.Token;
 import org.itmo.sd.visitor.Visitor;
 
-public class Digit implements Token {
-
-    private final int value;
-
-    public Digit(int value) {
-        this.value = value;
-    }
+public record Digit(int value) implements Token {
 
     @Override
     public boolean equals(Object obj) {
@@ -19,12 +13,8 @@ public class Digit implements Token {
         return digit.value == value;
     }
 
-    public void accept(Visitor visitor) {
+    public void accept(Visitor<?> visitor) {
         visitor.visitDigit(this);
-    }
-
-    public int getValue() {
-        return value;
     }
 
     public String toString() {

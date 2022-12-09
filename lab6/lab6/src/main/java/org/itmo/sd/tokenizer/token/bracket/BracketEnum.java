@@ -3,10 +3,12 @@ package org.itmo.sd.tokenizer.token.bracket;
 import org.itmo.sd.tokenizer.token.Token;
 import org.itmo.sd.visitor.Visitor;
 
-public abstract class Bracket implements Token  {
+public enum BracketEnum implements Token {
 
-    public void accept(Visitor visitor) {
+    OPEN_BRACKET, CLOSE_BRACKET;
+
+    @Override
+    public void accept(Visitor<?> visitor) {
         visitor.visitBracket(this);
     }
-
 }

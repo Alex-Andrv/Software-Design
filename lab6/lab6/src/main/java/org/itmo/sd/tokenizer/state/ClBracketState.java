@@ -1,7 +1,8 @@
 package org.itmo.sd.tokenizer.state;
 
 import org.itmo.sd.tokenizer.Tokenizer;
-import org.itmo.sd.tokenizer.token.bracket.ClBracket;
+
+import static org.itmo.sd.tokenizer.token.bracket.BracketEnum.CLOSE_BRACKET;
 
 public class ClBracketState extends State {
     ClBracketState(Tokenizer tokenizer) {
@@ -11,7 +12,7 @@ public class ClBracketState extends State {
     @Override
     public void parse(int ch) {
         if (ch == ')') {
-            tokenizer.addToken(new ClBracket());
+            tokenizer.addToken(CLOSE_BRACKET);
         } else {
             tokenizer.setState(new RouterState(tokenizer));
             tokenizer.parse(ch);

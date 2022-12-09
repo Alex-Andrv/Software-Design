@@ -1,7 +1,8 @@
 package org.itmo.sd.tokenizer.state;
 
 import org.itmo.sd.tokenizer.Tokenizer;
-import org.itmo.sd.tokenizer.token.bracket.OpBracket;
+
+import static org.itmo.sd.tokenizer.token.bracket.BracketEnum.OPEN_BRACKET;
 
 public class OpBracketState extends State {
     OpBracketState(Tokenizer tokenizer) {
@@ -11,7 +12,7 @@ public class OpBracketState extends State {
     @Override
     public void parse(int ch) {
         if (ch == '(') {
-            tokenizer.addToken(new OpBracket());
+            tokenizer.addToken(OPEN_BRACKET);
         } else {
             tokenizer.setState(new RouterState(tokenizer));
             tokenizer.parse(ch);

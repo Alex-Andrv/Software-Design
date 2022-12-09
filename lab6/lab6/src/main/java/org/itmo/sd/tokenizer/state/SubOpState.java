@@ -1,7 +1,8 @@
 package org.itmo.sd.tokenizer.state;
 
 import org.itmo.sd.tokenizer.Tokenizer;
-import org.itmo.sd.tokenizer.token.binary.SubOp;
+
+import static org.itmo.sd.tokenizer.token.binary.BinOp.SUB_OP;
 
 public class SubOpState extends State {
     SubOpState(Tokenizer tokenizer) {
@@ -11,7 +12,7 @@ public class SubOpState extends State {
     @Override
     public void parse(int ch) {
         if (ch == '-') {
-            tokenizer.addToken(new SubOp());
+            tokenizer.addToken(SUB_OP);
         } else {
             tokenizer.setState(new RouterState(tokenizer));
             tokenizer.parse(ch);

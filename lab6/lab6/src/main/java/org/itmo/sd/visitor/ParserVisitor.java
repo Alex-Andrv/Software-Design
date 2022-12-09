@@ -2,14 +2,15 @@ package org.itmo.sd.visitor;
 
 import org.itmo.sd.tokenizer.token.Token;
 import org.itmo.sd.tokenizer.token.binary.BinOp;
-import org.itmo.sd.tokenizer.token.bracket.Bracket;
-import org.itmo.sd.tokenizer.token.bracket.ClBracket;
-import org.itmo.sd.tokenizer.token.bracket.OpBracket;
+import org.itmo.sd.tokenizer.token.bracket.BracketEnum;
 import org.itmo.sd.tokenizer.token.primitives.Digit;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+
+import static org.itmo.sd.tokenizer.token.bracket.BracketEnum.CLOSE_BRACKET;
+import static org.itmo.sd.tokenizer.token.bracket.BracketEnum.OPEN_BRACKET;
 
 public class ParserVisitor extends Visitor<List<Token>> {
 
@@ -22,12 +23,12 @@ public class ParserVisitor extends Visitor<List<Token>> {
     }
 
     @Override
-    public void visitBracket(Bracket bracket) {
-        if (bracket instanceof OpBracket) {
+    public void visitBracket(BracketEnum bracket) {
+        if (bracket == OPEN_BRACKET) {
             stackOperation.add(bracket);
         } else {
-            while (!stackOperation.isEmpty() && !(stackOperation.peek() instanceof OpBracket)) {
-                if (stackOperation.peek() instanceof ClBracket) {
+            while (!stackOperation.isEmpty() && !(stackOperation.peek() == OPEN_BRACKET)) {
+                if (stackOperation.peek() == CLOSE_BRACKET) {
                     throw new RuntimeException("Wrong input string format");
                 }
                 polishTokens.add(stackOperation.pop());

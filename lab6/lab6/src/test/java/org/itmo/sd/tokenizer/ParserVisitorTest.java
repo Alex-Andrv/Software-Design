@@ -1,10 +1,6 @@
 package org.itmo.sd.tokenizer;
 
 import org.itmo.sd.tokenizer.token.Token;
-import org.itmo.sd.tokenizer.token.binary.DivOp;
-import org.itmo.sd.tokenizer.token.binary.MulOp;
-import org.itmo.sd.tokenizer.token.binary.SubOp;
-import org.itmo.sd.tokenizer.token.binary.SumOp;
 import org.itmo.sd.tokenizer.token.primitives.Digit;
 import org.itmo.sd.visitor.ParserVisitor;
 import org.junit.Test;
@@ -14,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import static org.itmo.sd.tokenizer.token.binary.BinOp.*;
 import static org.junit.Assert.assertEquals;
 
 public class ParserVisitorTest {
@@ -30,9 +27,9 @@ public class ParserVisitorTest {
                 List.of(
                         new Digit(1),
                         new Digit(2),
-                        new SumOp(),
+                        SUM_OP,
                         new Digit(3),
-                        new DivOp());
+                        DIV_OP);
 
         assertEquals(actual.size(), expected.size());
 
@@ -55,22 +52,22 @@ public class ParserVisitorTest {
                         new Digit(1),
                         new Digit(2),
                         new Digit(10),
-                        new MulOp(),
-                        new SumOp(),
+                        MUL_OP,
+                        SUM_OP,
                         new Digit(10),
-                        new SubOp(),
+                        SUB_OP,
                         new Digit(17),
                         new Digit(7),
-                        new MulOp(),
+                        MUL_OP,
                         new Digit(8),
-                        new DivOp(),
-                        new SumOp(),
+                        DIV_OP,
+                        SUM_OP,
                         new Digit(3),
-                        new DivOp(),
+                        DIV_OP,
                         new Digit(1),
                         new Digit(2),
-                        new SumOp(),
-                        new MulOp());
+                        SUM_OP,
+                        MUL_OP);
 
         assertEquals(actual.size(), expected.size());
 

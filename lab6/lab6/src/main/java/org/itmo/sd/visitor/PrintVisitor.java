@@ -1,7 +1,7 @@
 package org.itmo.sd.visitor;
 
 import org.itmo.sd.tokenizer.token.binary.BinOp;
-import org.itmo.sd.tokenizer.token.bracket.Bracket;
+import org.itmo.sd.tokenizer.token.bracket.BracketEnum;
 import org.itmo.sd.tokenizer.token.primitives.Digit;
 
 import java.util.StringJoiner;
@@ -15,7 +15,7 @@ public class PrintVisitor extends Visitor<String> {
     }
 
     @Override
-    public void visitBracket(Bracket bracket) {
+    public void visitBracket(BracketEnum bracket) {
         throw new UnsupportedOperationException();
     }
 

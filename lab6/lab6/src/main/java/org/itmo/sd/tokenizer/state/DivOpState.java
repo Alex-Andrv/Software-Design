@@ -1,7 +1,8 @@
 package org.itmo.sd.tokenizer.state;
 
 import org.itmo.sd.tokenizer.Tokenizer;
-import org.itmo.sd.tokenizer.token.binary.DivOp;
+
+import static org.itmo.sd.tokenizer.token.binary.BinOp.DIV_OP;
 
 public class DivOpState extends State {
     DivOpState(Tokenizer tokenizer) {
@@ -11,7 +12,7 @@ public class DivOpState extends State {
     @Override
     public void parse(int ch) {
         if (ch == '/') {
-            tokenizer.addToken(new DivOp());
+            tokenizer.addToken(DIV_OP);
         } else {
             tokenizer.setState(new RouterState(tokenizer));
             tokenizer.parse(ch);

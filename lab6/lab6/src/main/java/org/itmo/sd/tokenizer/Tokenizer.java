@@ -18,7 +18,7 @@ public class Tokenizer {
 
     private State tokenState;
 
-    private List<Token> tokens;
+    private final List<Token> tokens;
 
     public Tokenizer(InputStream inputStream) {
         this.reader = new InputStreamReader(inputStream);
